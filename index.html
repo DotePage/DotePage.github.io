@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <style type="text/css">
+            .playfair-display-header {
+              font-family: "Playfair Display", serif;
+              font-optical-sizing: auto;
+              font-weight: 700;
+              font-style: normal;
+              font-size: 2em;
+            }
+/*            @media only screen and (min-width: 768px) {
+                .playfair-display-header { font-size: 5em; }
+            }*/
+        </style>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p class="playfair-display-header">JS Media Query</p>
+
+        <script>
+            alert("Hello!");
+            function myFunction(x) {
+                headers = document.getElementsByClassName("playfair-display-header");
+                for(let i = 0; i < headers.length; i++) {
+                    if (x.matches) { // If media query matches
+                        headers[i].style.fontSize = "5em";
+                    } else {
+                        headers[i].style.fontSize = "2em";
+                    }
+                }
+ 
+            }
+
+            // Create a MediaQueryList object
+            var x = window.matchMedia("(min-width: 700px)")
+
+            // Call listener function at run time
+            myFunction(x);
+
+            // Attach listener function on state changes
+            x.addEventListener("change", function() {
+              myFunction(x);
+            }); 
+        </script>
+    </body>
+</html>
